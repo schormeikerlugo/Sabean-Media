@@ -1,0 +1,12 @@
+{
+  "name": "The Sabean Group",
+  "short_name": "Sabean",
+  "description": "Content, Creator, Brand and Media Platform Strategy.",
+  "theme_color": "#D4AF37",
+  "background_color": "#050505",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,120 @@
+---
+import "~/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const {
+  title = "The Sabean Group — Content, Creator, Brand & Media Platform Strategy",
+  description = "Sabean Media / The Sabean Group leverages a significant network and deep expertise to help high-end talent and brands build content, entertainment and media-centric platforms for 360° growth, multi-vertical revenue and audience monetization.",
+  image = "/images/og-image.jpg",
+  canonical = Astro.url.href,
+} = Astro.props;
+
+const siteName = "The Sabean Group";
+const themeColor = "#D4AF37";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "The Sabean Group",
+  legalName: "The Sabean Group, LLC",
+  alternateName: "Sabean Media",
+  url: Astro.site?.href ?? "https://sabeangroup.com",
+  logo: new URL("/images/logos/sabean-group-consulting.png", Astro.site ?? "https://sabeangroup.com").href,
+  description,
+  founder: {
+    "@type": "Person",
+    name: "Tim Sabean",
+    jobTitle: "President & Founder",
+  },
+  employee: [
+    { "@type": "Person", name: "Tim Sabean", jobTitle: "President & Founder" },
+    { "@type": "Person", name: "Gil Edwards", jobTitle: "Chief Content Officer" },
+    { "@type": "Person", name: "Jim Keller", jobTitle: "Chief Financial Officer" },
+    { "@type": "Person", name: "Al McGowan", jobTitle: "Chief Executive Officer" },
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "Founder",
+      email: "TimSabean@me.com",
+      telephone: "+1-646-812-3300",
+      areaServed: "US",
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "Partner",
+      email: "GilEdwards@outlook.com",
+      telephone: "+1-267-254-6991",
+      areaServed: "US",
+    },
+  ],
+  sameAs: [],
+};
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={siteName} />
+    <meta name="theme-color" content={themeColor} />
+    <meta name="color-scheme" content="dark" />
+    <meta name="keywords" content="Sabean Media, Sabean Group, Tim Sabean, content strategy, podcast roadmap, brand strategy, creator platform, media consulting, Howard Stern, SiriusXM, CBS Radio, Westwood One, Viacom, ABC" />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site ?? "https://sabeangroup.com").href} />
+    <meta property="og:image:alt" content="The Sabean Group — Content, Creator, Brand and Media Platform Strategy" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site ?? "https://sabeangroup.com").href} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+
+    <link rel="preload" as="video" href="/videos/hero.mp4" type="video/mp4" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-gold-400 focus:text-ink focus:px-4 focus:py-2 focus:rounded-full"
+      >Skip to content</a
+    >
+    <slot />
+    <script src="~/scripts/reveal.ts"></script>
+  </body>
+</html>

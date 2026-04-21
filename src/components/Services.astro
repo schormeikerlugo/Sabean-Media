@@ -1,0 +1,78 @@
+---
+import { services } from "~/data/services";
+import ServiceIcon from "./ServiceIcon.astro";
+---
+
+<section id="services" class="relative overflow-hidden bg-ink py-28 md:py-36">
+  <div class="mx-auto max-w-[1600px] px-6 md:px-10">
+    <header class="mb-20 grid grid-cols-1 items-end gap-10 md:mb-24 md:grid-cols-12">
+      <div class="md:col-span-4 reveal">
+        <div class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">
+          <span class="text-bone">Service.</span>
+          <span class="text-gold-400">(*)</span>
+        </div>
+        <h2 class="mt-6 font-display text-[clamp(2.8rem,5.2vw,4.5rem)] font-light leading-[0.95]">
+          Comprehensive
+          <span class="italic text-shine">media-centric</span>
+          strategy
+        </h2>
+      </div>
+
+      <div class="md:col-span-8 md:pl-10 md:border-l md:border-[rgba(212,175,55,0.12)] reveal reveal-delay-1">
+        <p class="max-w-2xl font-display text-[clamp(1.3rem,2.6vw,2rem)] font-light leading-[1.3] text-bone/85">
+          Six frameworks to help you build content, creator, brand and media-centric platforms — engineered to compound across every vertical.
+        </p>
+        <p class="mt-6 text-[0.72rem] uppercase tracking-[0.28em] text-gold-400">
+          * Engagements at custom retainer levels
+        </p>
+      </div>
+    </header>
+
+    <div class="flex items-center justify-between border-t border-[rgba(212,175,55,0.25)] pb-4 pt-4">
+      <span class="text-[0.62rem] uppercase tracking-[0.32em] text-bone-muted">Services</span>
+      <span class="font-display text-sm text-gold-gradient">sabean<sup class="ml-0.5 text-[0.6em]">®</sup></span>
+      <span class="text-[0.62rem] uppercase tracking-[0.32em] text-bone-muted">2026</span>
+    </div>
+
+    <ol class="border-t border-[rgba(212,175,55,0.1)]">
+      {services.map((s, i) => (
+        <li class={`group relative grid grid-cols-12 items-center gap-4 border-b border-[rgba(212,175,55,0.1)] py-7 transition-all hover:bg-[rgba(212,175,55,0.025)] reveal reveal-delay-${(i % 6) + 1}`}>
+          <span class="col-span-2 text-[0.72rem] uppercase tracking-[0.32em] text-bone-muted md:col-span-1">
+            {s.number}
+          </span>
+
+          <div class="col-span-4 hidden md:block md:col-span-3">
+            <div class="relative aspect-[16/9] overflow-hidden rounded-xl border border-[rgba(212,175,55,0.16)] bg-black">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(212,175,55,0.15),transparent_60%)]"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-gold-300 opacity-40 transition-all duration-700 group-hover:scale-125 group-hover:opacity-90">
+                <div class="scale-150 md:scale-200">
+                  <ServiceIcon name={s.icon} />
+                </div>
+              </div>
+              <div class="absolute bottom-2 left-2 text-[0.6rem] uppercase tracking-[0.22em] text-bone-muted">
+                {s.subtitle}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-8 md:col-span-6">
+            <h3 class="font-display text-[clamp(1.6rem,3.4vw,2.6rem)] font-light leading-[1] text-bone transition-all group-hover:text-gold-gradient group-hover:translate-x-1">
+              {s.title}
+            </h3>
+            <p class="mt-2 hidden text-[0.85rem] uppercase tracking-[0.16em] text-bone-muted md:block">
+              {s.description}
+            </p>
+          </div>
+
+          <div class="col-span-2 flex justify-end md:col-span-2">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(212,175,55,0.18)] text-gold-300 transition-all group-hover:border-[rgba(212,175,55,0.6)] group-hover:bg-gold-400 group-hover:text-ink group-hover:rotate-[-45deg]">
+              <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+            </span>
+          </div>
+
+          <p class="col-span-12 text-sm text-bone-muted md:hidden">{s.description}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

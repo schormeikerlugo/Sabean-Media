@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: "content" | "product" | "brand" | "podcast" | "platform" | "business";
+}
+const { name } = Astro.props;
+---
+
+{name === "content" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <circle cx="24" cy="24" r="5" />
+    <circle cx="10" cy="10" r="3" />
+    <circle cx="38" cy="10" r="3" />
+    <circle cx="10" cy="38" r="3" />
+    <circle cx="38" cy="38" r="3" />
+    <path d="M13 12 L20 21 M35 12 L28 21 M13 36 L20 27 M35 36 L28 27" />
+  </svg>
+)}
+
+{name === "product" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <rect x="8" y="6" width="32" height="28" rx="2" />
+    <path d="M8 14 H40" />
+    <path d="M18 42 H30 M24 34 V42" />
+    <circle cx="12" cy="10" r="0.8" fill="currentColor" />
+    <circle cx="15" cy="10" r="0.8" fill="currentColor" />
+    <path d="M20 20 L26 24 L20 28 Z" fill="currentColor" fill-opacity="0.15" />
+  </svg>
+)}
+
+{name === "brand" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <rect x="9" y="9" width="30" height="30" rx="3" />
+    <path d="M9 19 H39" />
+    <path d="M16 27 H32 M16 33 H26" />
+    <circle cx="14" cy="14" r="1" fill="currentColor" />
+  </svg>
+)}
+
+{name === "podcast" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <rect x="19" y="6" width="10" height="22" rx="5" />
+    <path d="M14 22 a10 10 0 0 0 20 0" />
+    <path d="M24 32 V40 M19 40 H29" />
+  </svg>
+)}
+
+{name === "platform" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <path d="M6 30 l6 -6 h10 l4 4 h10 l6 -6" />
+    <path d="M6 30 v8 h36 v-8" />
+    <circle cx="14" cy="18" r="3" />
+    <circle cx="34" cy="18" r="3" />
+  </svg>
+)}
+
+{name === "business" && (
+  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+    <circle cx="24" cy="24" r="14" />
+    <path d="M24 14 V34" />
+    <path d="M28 18 H22 a3 3 0 0 0 0 6 h4 a3 3 0 0 1 0 6 h-6" />
+  </svg>
+)}

@@ -1,0 +1,186 @@
+---
+// Hero — massive wordmark top, video / blob center, status bar, asymmetric layout inspired by editorial web references.
+
+const navItems = [
+  { n: "(01)", label: "Content & Brand Strategy" },
+  { n: "(02)", label: "Podcast & Platform Development" },
+  { n: "(03)", label: "Product & Revenue Growth" },
+];
+---
+
+<section
+  id="top"
+  class="relative isolate min-h-[100svh] w-full overflow-hidden bg-ink text-bone"
+>
+  <div class="absolute inset-0 -z-10">
+    <video
+      class="h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/images/hero-poster.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,transparent_60%)]"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_20%_90%,rgba(212,175,55,0.08),transparent_55%)]"
+    >
+    </div>
+  </div>
+
+  <div
+    class="relative z-10 mx-auto grid min-h-[100svh] w-full max-w-[1600px] grid-rows-[auto_1fr_auto] px-6 pt-28 pb-8 md:px-10 md:pt-32"
+  >
+    <div></div>
+
+    <div class="relative mt-10 md:mt-14">
+      <h1
+        class="pointer-events-none relative font-display font-light leading-[0.85] tracking-[-0.04em]"
+      >
+        <span class="block text-[clamp(4rem,18vw,17rem)] reveal">
+          <span class="text-gold-gradient">Sabean</span>
+        </span>
+      </h1>
+
+      <div
+        class="relative mt-6 grid grid-cols-1 gap-y-16 md:grid-cols-12 md:gap-x-10"
+      >
+        <aside class="md:col-span-3 md:pt-4 reveal reveal-delay-1">
+          <p
+            class="text-[0.66rem] uppercase tracking-[0.32em] text-bone-muted leading-[1.7]"
+          >
+            Build your brand
+            <span class="block text-bone/70">with personality-</span>
+            <span class="block text-bone/70">driven content.</span>
+          </p>
+          <p
+            class="mt-8 max-w-[18rem] text-[0.7rem] uppercase tracking-[0.22em] text-bone-muted leading-[1.9]"
+          >
+            <span class="text-gold-300">We help high-end talent scale</span> with
+            strategy, platforms &amp; partnerships that compound across every vertical.
+          </p>
+        </aside>
+
+        <div class="hidden md:col-span-5 md:block"></div>
+
+        <div class="md:col-span-4 flex flex-col gap-5 reveal reveal-delay-2 self-start md:pt-4">
+          <div
+            class="flex flex-wrap items-center gap-4 text-[0.62rem] uppercase tracking-[0.32em] text-bone-muted"
+          >
+            <span
+              class="flex items-center gap-2 rounded-full border border-[rgba(212,175,55,0.28)] bg-black/40 px-3 py-1.5 backdrop-blur-md"
+            >
+              <span class="relative flex h-1.5 w-1.5">
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-300 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold-300"
+                ></span>
+              </span>
+              <span class="text-gold-200">Available for new engagements</span>
+            </span>
+            <span class="inline-flex items-baseline gap-2">
+              <span class="text-bone-muted">EST.</span>
+              <span class="text-bone">2024</span>
+              <span class="text-bone-muted">· NEW YORK</span>
+            </span>
+          </div>
+
+          <ol class="flex flex-col gap-0">
+            {
+              navItems.map((item, i) => (
+                <li
+                  class={`group flex items-baseline gap-4 py-3 text-[0.78rem] uppercase tracking-[0.22em] text-bone/80 hover:text-gold-200 transition-colors ${i !== 0 ? "border-t border-[rgba(212,175,55,0.12)]" : ""}`}
+                >
+                  <span class="text-bone-muted">{item.n}</span>
+                  <a href="#services" class="flex-1">
+                    {item.label}
+                  </a>
+                  <span class="opacity-0 transition-all group-hover:opacity-100 text-gold-300">
+                    →
+                  </span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+
+      <div
+        class="pointer-events-none absolute inset-0 top-[clamp(3rem,16vw,14rem)] -z-10 hidden md:flex items-center justify-center"
+      >
+        <div class="relative h-[38vw] max-h-[520px] w-[38vw] max-w-[520px]">
+          <div
+            class="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.35)_0%,rgba(212,175,55,0.1)_40%,transparent_70%)] blur-2xl float"
+          >
+          </div>
+          <div
+            class="absolute inset-[10%] rounded-full border border-[rgba(212,175,55,0.25)]"
+          >
+          </div>
+          <div
+            class="absolute inset-[22%] rounded-full border border-[rgba(212,175,55,0.18)]"
+          >
+          </div>
+          <div
+            class="absolute inset-[34%] rounded-full border border-[rgba(212,175,55,0.12)]"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mt-16 flex flex-col gap-6 border-t border-[rgba(212,175,55,0.14)] pt-6 md:flex-row md:items-center md:justify-between"
+    >
+      <div class="flex items-center gap-6 reveal">
+        <a
+          href="#mission"
+          class="btn-circle group"
+          aria-label="Scroll to Mission"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="h-4 w-4 rotate-45 transition-transform duration-500 group-hover:rotate-[135deg]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M7 7 L17 17 M7 17 L7 7 L17 7"></path></svg
+          >
+        </a>
+        <p
+          class="max-w-xs text-[0.66rem] uppercase tracking-[0.22em] text-bone-muted leading-[1.8]"
+        >
+          <span class="text-gold-300">Content.</span>
+          <span class="text-gold-300">Creator.</span>
+          <span class="text-gold-300">Brand.</span>
+          <span class="text-gold-300">Platform.</span>
+          <br />
+          Strategy that moves culture.
+        </p>
+      </div>
+
+      <div class="flex items-end gap-2 text-right reveal reveal-delay-1">
+        <span
+          class="font-display text-[clamp(0.9rem,1.4vw,1.1rem)] uppercase tracking-[0.32em] text-bone-muted"
+          >© 2026 — Sabean<sup class="text-[0.7em] ml-0.5 text-gold-300">®</sup
+          ></span
+        >
+      </div>
+    </div>
+  </div>
+</section>
