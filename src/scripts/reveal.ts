@@ -110,7 +110,7 @@ const initNav = () => {
 
 const initCursor = () => {
   if (prefersReducedMotion || window.matchMedia("(pointer: coarse)").matches) return;
-  const cursor = document.querySelector<HTMLElement>("[data-cursor]");
+  const cursor = document.querySelector<HTMLElement>("#gold-cursor");
   if (!cursor) return;
 
   let x = window.innerWidth / 2;

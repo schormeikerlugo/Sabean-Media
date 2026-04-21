@@ -1,0 +1,25 @@
+---
+interface Props {
+  size?: number;
+  stroke?: number;
+  class?: string;
+}
+const { size = 20, stroke = 1.2, class: className = "" } = Astro.props;
+const h = size * 0.5;
+---
+
+<svg
+  width={size}
+  height={h}
+  viewBox="0 0 40 20"
+  class={className}
+  aria-hidden="true"
+  role="presentation"
+>
+  <polygon
+    points="20,1 39,10 20,19 1,10"
+    fill="none"
+    stroke="currentColor"
+    stroke-width={stroke}
+  />
+</svg>

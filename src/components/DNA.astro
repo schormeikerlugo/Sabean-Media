@@ -1,33 +1,53 @@
 ---
 import { brands } from "~/data/brands";
+import Diamond from "./Diamond.astro";
 
-const row = [...brands, ...brands];
+// Sketch port: <LogoMarquee items={clientLogos} speed={70} /> + label block
+const items = brands.map((b) => ({ src: b.logo, name: b.name }));
+const loop = [...items, ...items];
 ---
 
-<section id="dna" class="relative overflow-hidden border-t border-b border-[rgba(212,175,55,0.14)] bg-ink py-20 md:py-24">
-  <div class="mx-auto mb-10 flex max-w-[1600px] items-center justify-between px-6 md:px-10">
-    <div class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">
-      <span class="text-bone">Our DNA.</span>
-      <span class="text-gold-400">(*)</span>
+<section id="dna" class="relative overflow-hidden bg-black">
+  <div class="mt-28 px-6 md:px-14 max-w-7xl mx-auto">
+    <div class="flex items-center gap-4 mb-2 reveal">
+      <Diamond size={14} class="text-[color:var(--gold)]" stroke={1.2} />
+      <span
+        class="text-[10px] uppercase tracking-[0.5em] text-[color:var(--gold)]"
+        style="font-family: var(--font-mono);"
+      >
+        Channels, brands &amp; platforms
+      </span>
+      <div class="h-px bg-[color:var(--gold)]/30 flex-1"></div>
     </div>
-    <p class="hidden max-w-md text-right text-[0.8rem] uppercase tracking-[0.2em] text-bone-muted md:block">
-      Brands the team has built, launched or scaled
-    </p>
   </div>
 
-  <div class="marquee-wrapper relative mask-fade-right">
-    <div class="marquee py-4">
-      {row.map((b) => (
-        <div class="flex h-20 min-w-[200px] items-center justify-center px-8">
-          <img
-            src={b.logo}
-            alt={`${b.name} logo`}
-            loading="lazy"
-            decoding="async"
-            class="max-h-12 w-auto max-w-[180px] object-contain opacity-55 brightness-[1.3] grayscale transition-all duration-700 hover:opacity-100 hover:grayscale-0 hover:brightness-100 hover:scale-110"
-          />
-        </div>
-      ))}
+  <div class="mt-6 border-t border-b border-[color:var(--gold)]/20">
+    <div class="relative overflow-hidden py-12">
+      <div
+        aria-hidden="true"
+        class="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
+        style="background: linear-gradient(to right, #000 20%, transparent);"
+      ></div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-y-0 right-0 w-32 z-10 pointer-events-none"
+        style="background: linear-gradient(to left, #000 20%, transparent);"
+      ></div>
+
+      <div class="sk-marquee-track flex items-center whitespace-nowrap">
+        {loop.map((it, i) => (
+          <div class="flex items-center shrink-0 px-12 group" title={it.name}>
+            <img
+              src={it.src}
+              alt={it.name}
+              loading="lazy"
+              decoding="async"
+              class="h-12 md:h-14 w-auto opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+              style="filter: drop-shadow(0 0 12px rgba(212,175,75,0.15)); max-width: 220px; object-fit: contain;"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

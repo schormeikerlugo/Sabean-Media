@@ -1,88 +1,27 @@
 export interface Moment {
   id: string;
-  title: string;
-  subtitle: string;
+  name: string;
+  caption: string;
   image: string;
-  tall?: boolean;
-  wide?: boolean;
+  span: "tall" | "wide";
 }
 
+// Curated to alternate tall/wide for an editorial rhythm (4-col grid).
 export const moments: Moment[] = [
-  {
-    id: "chris-rock-townhall",
-    title: "Chris Rock — Town Hall",
-    subtitle: "Personality-driven content event",
-    image: "/images/moments/chris-rock-townhall-1.jpg",
-    tall: true,
-  },
-  {
-    id: "opie-anthony",
-    title: "Opie & Anthony",
-    subtitle: "Flagship SiriusXM programming",
-    image: "/images/moments/opie-and-anthony.jpg",
-  },
-  {
-    id: "joan-rivers-unmasked",
-    title: "Joan Rivers — UnMasked",
-    subtitle: "Legendary long-form interview",
-    image: "/images/moments/joan-rivers-unmasked.jpg",
-  },
-  {
-    id: "al-tim-gil",
-    title: "The Partners",
-    subtitle: "Al, Tim & Gil",
-    image: "/images/moments/al-tim-gil.jpg",
-    wide: true,
-  },
-  {
-    id: "zach-braff-kate-hudson",
-    title: "Zach Braff & Kate Hudson",
-    subtitle: "UnMasked with Ron Bennington",
-    image: "/images/moments/zach-braff-kate-hudson.jpg",
-    tall: true,
-  },
-  {
-    id: "ron-white-bennington",
-    title: "Ron White × Ron Bennington",
-    subtitle: "Comedy programming",
-    image: "/images/moments/ron-white-bennington.jpg",
-  },
-  {
-    id: "jerry-lewis-townhall",
-    title: "Jerry Lewis — Town Hall",
-    subtitle: "An icon on air",
-    image: "/images/moments/jerry-lewis-townhall.png",
-  },
-  {
-    id: "montreal-comedy-festival",
-    title: "Montreal Comedy Festival",
-    subtitle: "On-site programming",
-    image: "/images/moments/montreal-comedy-festival.png",
-    wide: true,
-  },
-  {
-    id: "jim-norton-opie-anthony",
-    title: "Jim Norton, Opie & Anthony",
-    subtitle: "The O&A era",
-    image: "/images/moments/jim-norton-opie-anthony.jpg",
-  },
-  {
-    id: "kate-hudson",
-    title: "Kate Hudson",
-    subtitle: "Celebrity access",
-    image: "/images/moments/kate-hudson.png",
-  },
-  {
-    id: "chris-rock-cedric",
-    title: "Chris Rock & Cedric the Entertainer",
-    subtitle: "Town Hall moment",
-    image: "/images/moments/chris-rock-cedric-townhall.jpg",
-    wide: true,
-  },
-  {
-    id: "ron-and-fez",
-    title: "Ron & Fez",
-    subtitle: "Cult classic daily show",
-    image: "/images/moments/ron-and-fez.png",
-  },
+  { id: "chris-rock-townhall",     name: "Chris Rock",                caption: "SiriusXM Town Hall",             image: "/images/moments/chris-rock-townhall-1.jpg",    span: "tall" },
+  { id: "sting",                   name: "Sting",                     caption: "Backstage, with Gil Edwards",    image: "/images/moments/sting-gil.jpg",                span: "tall" },
+  { id: "opie-anthony",            name: "Opie & Anthony",            caption: "Radio Legends · SiriusXM",       image: "/images/moments/opie-and-anthony.jpg",         span: "wide" },
+  { id: "dice",                    name: "Andrew Dice Clay",          caption: "w/ Gil Edwards · SiriusXM",      image: "/images/moments/dice.png",                     span: "tall" },
+  { id: "dan-aykroyd",             name: "Dan Aykroyd",               caption: "SiriusXM Studios",               image: "/images/moments/dan-akroyd.png",               span: "tall" },
+  { id: "chris-rock-cedric",       name: "Chris Rock & Cedric",       caption: "Town Hall · SiriusXM",           image: "/images/moments/chris-rock-cedric-townhall.jpg", span: "wide" },
+  { id: "joan-rivers",             name: "Joan Rivers",               caption: "Unmasked · SiriusXM",            image: "/images/moments/joan-rivers-unmasked.jpg",     span: "tall" },
+  { id: "kate-hudson",             name: "Kate Hudson",               caption: "SiriusXM Live",                  image: "/images/moments/kate-hudson.png",              span: "tall" },
+  { id: "chris-cornell",           name: "Chris Cornell",             caption: "w/ Gil Edwards · Soundgarden",   image: "/images/moments/gil-chris-cornell.jpg",        span: "wide" },
+  { id: "foo-fighters",            name: "Foo Fighters",              caption: "MTV2 · WYSP",                    image: "/images/moments/foo-fighters.png",             span: "tall" },
+  { id: "jerry-lewis",             name: "Jerry Lewis",               caption: "Town Hall · SiriusXM",           image: "/images/moments/jerry-lewis-townhall.png",     span: "wide" },
+  { id: "zach-braff-kate",         name: "Zach Braff & Kate Hudson",  caption: "Unmasked · SiriusXM",            image: "/images/moments/zach-braff-kate-hudson.jpg",   span: "tall" },
+  { id: "ron-and-fez",             name: "Ron & Fez",                 caption: "Radio Legends",                  image: "/images/moments/ron-and-fez.png",              span: "wide" },
+  { id: "montreal",                name: "Montreal Comedy Festival",  caption: "Industry Panel",                 image: "/images/moments/montreal-comedy-festival.png", span: "wide" },
+  { id: "al-gil-miami",            name: "Al & Gil",                  caption: "Miami",                          image: "/images/moments/al-gil-miami.jpg",             span: "tall" },
+  { id: "team-partners",           name: "Al · Tim · Gil",            caption: "The Partners",                   image: "/images/moments/al-tim-gil.jpg",               span: "wide" },
 ];

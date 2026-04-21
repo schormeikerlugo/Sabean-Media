@@ -24,6 +24,16 @@
   --shadow-gold: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 20px 80px -20px rgba(212, 175, 55, 0.55);
 }
 
+:root {
+  --gold: #d4af4b;
+  --gold-bright: #f3d27a;
+  --gold-deep: #8a6a1e;
+  --ivory: #f5f1e6;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display-sketch: "Fraunces", "Times New Roman", serif;
+  --font-body-sketch: "Inter Tight", -apple-system, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -77,6 +87,45 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+  }
+
+  .text-gold-solid {
+    color: #d4af4b;
+    text-shadow:
+      0 1px 0 rgba(255, 235, 170, 0.18),
+      0 0 24px rgba(212, 175, 75, 0.22);
+    -webkit-text-fill-color: #d4af4b;
+  }
+
+  /* ======== Sketch-ported utilities (sabean-site_1.html) ======== */
+
+  /* Marquee keyframes — exactly as in the sketch */
+  @keyframes sk-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @keyframes sk-marquee-reverse {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+  .sk-marquee-track {
+    animation: sk-marquee 70s linear infinite;
+  }
+
+  /* Font helpers */
+  .font-mono-sketch { font-family: var(--font-mono); }
+  .font-display-sketch { font-family: var(--font-display-sketch); }
+  .font-body-sketch { font-family: var(--font-body-sketch); }
+
+  /* Archive tile — vintage sepia to match the reference gallery */
+  .sk-archive-img {
+    filter: sepia(1) saturate(0.6) contrast(1.08) brightness(0.82) hue-rotate(-12deg);
+    transition: transform 0.8s ease, filter 0.8s ease;
+    will-change: transform;
+  }
+  .group:hover .sk-archive-img {
+    filter: sepia(0.85) saturate(0.85) contrast(1.1) brightness(0.92) hue-rotate(-10deg);
+    transform: scale(1.06);
   }
 
   .bg-gold-gradient {
