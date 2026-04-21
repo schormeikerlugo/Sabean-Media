@@ -142,10 +142,24 @@ const onReady = (fn: () => void) => {
   else document.addEventListener("DOMContentLoaded", fn);
 };
 
+const initBackToTop = () => {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+  const update = () => {
+    btn.setAttribute(
+      "data-visible",
+      (window.scrollY > window.innerHeight * 0.4).toString()
+    );
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+};
+
 onReady(() => {
   initReveal();
   initCountUp();
   initParallax();
   initNav();
   initCursor();
+  initBackToTop();
 });

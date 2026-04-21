@@ -1,39 +1,183 @@
 ---
+import Diamond from "./Diamond.astro";
+
 const year = new Date().getFullYear();
+
+const navLinks = [
+  { n: "01", label: "Mission",  href: "#mission" },
+  { n: "02", label: "Services", href: "#services" },
+  { n: "03", label: "Brands",   href: "#dna" },
+  { n: "04", label: "Archive",  href: "#moments" },
+  { n: "05", label: "Team",     href: "#team" },
+  { n: "06", label: "Contact",  href: "#contact" },
+];
+
+const serviceLinks = [
+  "Content Strategy",
+  "Product Strategy",
+  "Brand Strategy",
+  "Podcast Roadmap",
+  "Platform Development",
+  "Business Consulting",
+];
+
+const contacts = [
+  {
+    role: "Founder",
+    name: "Tim Sabean",
+    email: "TimSabean@me.com",
+    phone: "+1 646-812-3300",
+    phoneHref: "tel:+16468123300",
+  },
+  {
+    role: "Partner",
+    name: "Gil Edwards",
+    email: "GilEdwards@outlook.com",
+    phone: "+1 267-254-6991",
+    phoneHref: "tel:+12672546991",
+  },
+];
 ---
 
-<footer class="relative overflow-hidden bg-ink pb-0 pt-0">
-  <div class="mx-auto max-w-[1600px] px-6 md:px-10">
-    <div class="grid grid-cols-1 items-center gap-8 border-t border-[rgba(212,175,55,0.2)] py-8 md:grid-cols-3">
-      <a href="mailto:TimSabean@me.com" class="btn-link">Write to Email</a>
+<footer class="relative overflow-hidden bg-ink text-bone">
+  <!-- CTA callout row -->
+  <section class="relative border-t border-[rgba(212,175,55,0.2)]">
+    <div aria-hidden="true" class="pointer-events-none absolute -left-32 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.09)_0%,transparent_60%)] blur-3xl"></div>
 
-      <a href="tel:+16468123300" class="group flex flex-col items-center text-center">
-        <span class="font-display text-2xl font-light text-bone transition-colors group-hover:text-gold-gradient md:text-3xl">(646) 812-3300</span>
-        <span class="mt-1 text-[0.6rem] uppercase tracking-[0.32em] text-bone-muted">TimSabean@me.com</span>
-      </a>
-
-      <a href="https://wa.me/16468123300" class="btn-link ml-auto">Write to WA</a>
-    </div>
-
-    <div class="grid grid-cols-1 gap-8 border-t border-[rgba(212,175,55,0.12)] py-8 text-[0.72rem] uppercase tracking-[0.24em] text-bone-muted md:grid-cols-3">
-      <div>
-        <p class="text-bone">© {year} The Sabean Group, LLC</p>
-        <p class="mt-1">All rights reserved</p>
+    <div class="mx-auto flex max-w-[1600px] flex-col items-start gap-10 px-6 py-16 md:flex-row md:items-center md:justify-between md:gap-14 md:px-10 md:py-20">
+      <div class="reveal">
+        <div class="flex items-center gap-3">
+          <Diamond size={14} class="text-[color:var(--gold)]" stroke={1.2} />
+          <span
+            class="text-[10px] uppercase tracking-[0.5em] text-[color:var(--gold)]"
+            style="font-family: var(--font-mono);"
+          >
+            Visioneering · 2026
+          </span>
+        </div>
+        <h2 class="mt-6 font-display text-[clamp(2.25rem,4.4vw,3.75rem)] font-light leading-[1] tracking-[-0.02em]">
+          Let's build
+          <span class="italic text-shine">something unforgettable.</span>
+        </h2>
       </div>
-      <div class="md:text-center">
-        <p class="text-gold-400">Address:</p>
-        <p class="mt-1 text-bone">New York, NY · Remote US</p>
-      </div>
-      <div class="md:text-right">
-        <p>The site has been developed for</p>
-        <p class="mt-1 text-bone">Sabean Media · The Sabean Group</p>
-      </div>
-    </div>
 
-    <div class="pointer-events-none pt-6 pb-2 select-none">
-      <p class="font-display font-light leading-[0.78] tracking-[-0.055em] text-[clamp(5rem,27vw,24rem)]">
-        <span class="text-gold-gradient">sabean</span><sup class="ml-2 align-super font-sans text-[0.15em] text-gold-300">®</sup>
-      </p>
+      <div class="flex flex-wrap items-center gap-4 reveal reveal-delay-1">
+        <a href="#contact" class="btn-gold">
+          Start a Conversation
+          <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+        </a>
+        <a href="mailto:TimSabean@me.com" class="btn-ghost">Email Direct</a>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Main grid -->
+  <section class="border-t border-[rgba(212,175,55,0.12)]">
+    <div class="mx-auto grid max-w-[1600px] grid-cols-2 gap-x-8 gap-y-14 px-6 py-16 md:grid-cols-12 md:gap-10 md:px-10 md:py-20">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-4">
+        <a href="#top" class="group inline-flex items-center gap-3" aria-label="The Sabean Group — Home">
+          <span class="grid h-10 w-10 place-items-center rounded-full border border-[rgba(212,175,55,0.4)] transition-colors group-hover:border-[rgba(212,175,55,0.9)]">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-gold-300" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12 L12 5 L22 12 L12 19 Z"/></svg>
+          </span>
+          <span class="flex flex-col leading-tight">
+            <span class="text-[0.56rem] uppercase tracking-[0.4em] text-bone-muted">The</span>
+            <span class="-mt-0.5 font-display text-xl tracking-[-0.01em] text-gold-solid">
+              Sabean<sup class="ml-0.5 text-[0.55em] text-gold-300">®</sup>
+            </span>
+          </span>
+        </a>
+
+        <p class="mt-7 max-w-xs text-[0.92rem] leading-relaxed text-bone/70">
+          Content, Creator, Brand and Media Platform Strategy — engineered for 360° growth, multi-vertical revenue and audience monetization.
+        </p>
+
+        <address class="mt-7 text-[0.62rem] not-italic uppercase tracking-[0.28em] text-bone-muted leading-[2]">
+          <span class="text-gold-400">Based in</span><br />
+          <span class="text-bone">New York, NY</span><br />
+          Remote · US
+        </address>
+      </div>
+
+      <!-- Navigate -->
+      <div class="col-span-1 md:col-span-2">
+        <p class="mb-5 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.32em] text-gold-400" style="font-family: var(--font-mono);">
+          Navigate
+          <span class="h-px flex-1 bg-[rgba(212,175,55,0.25)]"></span>
+        </p>
+        <ul class="space-y-3 text-sm">
+          {navLinks.map((l) => (
+            <li>
+              <a href={l.href} class="group flex items-baseline gap-3 text-bone-muted transition-colors hover:text-bone">
+                <span class="text-[0.6rem] text-gold-400/70 transition-colors group-hover:text-gold-300">({l.n})</span>
+                <span class="relative">
+                  {l.label}
+                  <span class="absolute -bottom-1 left-0 h-px w-0 bg-gold-300 transition-all duration-500 group-hover:w-full"></span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-span-1 md:col-span-3">
+        <p class="mb-5 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.32em] text-gold-400" style="font-family: var(--font-mono);">
+          Services
+          <span class="h-px flex-1 bg-[rgba(212,175,55,0.25)]"></span>
+        </p>
+        <ul class="space-y-3 text-sm">
+          {serviceLinks.map((s, i) => (
+            <li>
+              <a href="#services" class="group flex items-baseline gap-3 text-bone-muted transition-colors hover:text-bone">
+                <span class="text-[0.6rem] text-gold-400/70 transition-colors group-hover:text-gold-300">
+                  0{i + 1}
+                </span>
+                <span>{s}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Direct Contact -->
+      <div class="col-span-2 md:col-span-3">
+        <p class="mb-5 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.32em] text-gold-400" style="font-family: var(--font-mono);">
+          Direct Contact
+          <span class="h-px flex-1 bg-[rgba(212,175,55,0.25)]"></span>
+        </p>
+        <ul class="space-y-5">
+          {contacts.map((c) => (
+            <li>
+              <p class="text-[0.58rem] uppercase tracking-[0.3em] text-gold-400">{c.role}</p>
+              <p class="mt-1 font-display text-lg font-light text-bone">{c.name}</p>
+              <a href={`mailto:${c.email}`} class="mt-1 flex items-center gap-2 text-[0.85rem] text-bone/80 transition-colors hover:text-gold-200">
+                <span class="text-gold-300">→</span>
+                {c.email}
+              </a>
+              <a href={c.phoneHref} class="flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.22em] text-bone-muted transition-colors hover:text-gold-200">
+                <span class="text-gold-300">→</span>
+                {c.phone}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal row -->
+  <section class="border-t border-[rgba(212,175,55,0.12)]">
+    <div class="mx-auto flex max-w-[1600px] flex-col gap-4 px-6 py-6 text-[0.6rem] uppercase tracking-[0.28em] text-bone-muted md:flex-row md:items-center md:justify-between md:px-10">
+      <p>© {year} The Sabean Group, LLC · All rights reserved</p>
+
+      <div class="flex items-center gap-4">
+        <span class="hidden md:inline">Engagements at custom retainer levels</span>
+        <span class="hidden h-px w-8 bg-[rgba(212,175,55,0.3)] md:inline-block"></span>
+        <a href="#contact" class="hover:text-gold-200 transition-colors">Privacy</a>
+        <a href="#contact" class="hover:text-gold-200 transition-colors">Terms</a>
+      </div>
+    </div>
+  </section>
+
 </footer>

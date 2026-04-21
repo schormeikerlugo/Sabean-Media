@@ -115,6 +115,28 @@ const organizationJsonLd = {
       >Skip to content</a
     >
     <slot />
+
+    <a
+      id="back-to-top"
+      href="#top"
+      data-visible="false"
+      aria-label="Back to top"
+      class="group pointer-events-none fixed bottom-5 right-5 z-40 inline-flex translate-y-4 items-center gap-2 rounded-full border border-[rgba(212,175,55,0.4)] bg-black/70 px-4 py-3 text-[0.6rem] uppercase tracking-[0.32em] text-bone opacity-0 backdrop-blur-xl transition-all duration-500 hover:border-gold-300 hover:text-gold-200 data-[visible=true]:pointer-events-auto data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 md:bottom-8 md:right-8"
+    >
+      <svg
+        viewBox="0 0 20 20"
+        class="h-3.5 w-3.5 transition-transform duration-500 group-hover:-translate-y-0.5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M10 16 V4 M4 10 l6 -6 l6 6" />
+      </svg>
+      <span>Top</span>
+    </a>
+
     <script src="~/scripts/reveal.ts"></script>
   </body>
 </html>
