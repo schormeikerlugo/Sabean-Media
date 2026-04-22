@@ -4,9 +4,9 @@ import { team } from "~/data/team";
 
 <section id="team" class="relative overflow-hidden bg-ink py-28 md:py-36">
   <div class="mx-auto max-w-[1600px] px-6 md:px-10">
-    <header class="mb-14 grid grid-cols-1 items-end gap-8 md:grid-cols-12 reveal">
+    <header class="mb-14 grid grid-cols-1 items-end gap-8 md:grid-cols-12 reveal text-center md:text-left">
       <div class="md:col-span-6">
-        <div class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">
+        <div class="flex items-center justify-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted md:justify-start">
           <span class="text-bone">What the team brings.</span>
           <span class="text-gold-400">(*)</span>
         </div>
@@ -15,7 +15,7 @@ import { team } from "~/data/team";
           <span class="block italic text-shine">built the rooms.</span>
         </h2>
       </div>
-      <div class="md:col-span-6 flex flex-wrap gap-2 md:justify-end">
+      <div class="md:col-span-6 flex flex-wrap justify-center gap-2 md:justify-end">
         {team.map((m) => (
           <span class="rounded-full border border-[rgba(212,175,55,0.2)] bg-black/40 px-3 py-1.5 text-[0.64rem] uppercase tracking-[0.22em] text-bone-muted">
             {m.name.split(" ")[0]} · {m.shortRole}
@@ -63,7 +63,7 @@ import { team } from "~/data/team";
                 type="button"
                 data-team-btn={m.id}
                 data-active={i === 0 ? "true" : "false"}
-                class="group w-full border-b border-[rgba(212,175,55,0.12)] py-6 text-left transition-colors data-[active=true]:bg-[rgba(212,175,55,0.04)] hover:bg-[rgba(212,175,55,0.025)]"
+                class="group w-full border-b border-[rgba(212,175,55,0.12)] py-6 text-center transition-colors data-[active=true]:bg-[rgba(212,175,55,0.04)] hover:bg-[rgba(212,175,55,0.025)] md:text-left"
               >
                 <div class="grid grid-cols-12 items-center gap-3">
                   <span class="col-span-2 text-[0.68rem] uppercase tracking-[0.32em] text-bone-muted md:col-span-1">
