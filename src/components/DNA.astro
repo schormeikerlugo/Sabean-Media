@@ -1,15 +1,14 @@
 ---
 import { brands } from "~/data/brands";
 import Diamond from "./Diamond.astro";
-
-// Sketch port: <LogoMarquee items={clientLogos} speed={70} /> + label block
-const items = brands.map((b) => ({ src: b.logo, name: b.name }));
-const loop = [...items, ...items];
 ---
 
-<section id="dna" class="relative overflow-hidden bg-black">
-  <div class="mt-28 px-6 md:px-14 max-w-7xl mx-auto">
-    <div class="flex items-center gap-4 mb-2 reveal">
+<section id="dna" class="relative overflow-hidden bg-black pt-36 pb-24 md:pt-52 md:pb-32">
+  <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,transparent_70%)] blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.06)_0%,transparent_70%)] blur-3xl"></div>
+
+  <div class="mx-auto max-w-7xl px-6 md:px-14">
+    <div class="mb-8 flex items-center gap-4 reveal">
       <Diamond size={14} class="text-[color:var(--gold)]" stroke={1.2} />
       <span
         class="text-[10px] uppercase tracking-[0.5em] text-[color:var(--gold)]"
@@ -17,37 +16,66 @@ const loop = [...items, ...items];
       >
         Channels, brands &amp; platforms
       </span>
-      <div class="h-px bg-[color:var(--gold)]/30 flex-1"></div>
+      <div class="h-px flex-1 bg-[rgba(212,175,75,0.3)]"></div>
     </div>
-  </div>
 
-  <div class="mt-6 border-t border-b border-[color:var(--gold)]/20">
-    <div class="relative overflow-hidden py-12">
-      <div
-        aria-hidden="true"
-        class="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
-        style="background: linear-gradient(to right, #000 20%, transparent);"
-      ></div>
-      <div
-        aria-hidden="true"
-        class="absolute inset-y-0 right-0 w-32 z-10 pointer-events-none"
-        style="background: linear-gradient(to left, #000 20%, transparent);"
-      ></div>
+    <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10 reveal reveal-delay-1">
+      <h2 class="md:col-span-7 font-display text-[clamp(2.4rem,4.8vw,4rem)] font-light leading-[0.95] tracking-[-0.02em]">
+        The brands
+        <span class="italic text-shine">we've shaped.</span>
+      </h2>
+      <p class="md:col-span-5 md:pt-4 max-w-lg text-[0.95rem] leading-relaxed text-[color:var(--ivory)]/70">
+        A curated wall of channels, stations, networks and platforms the partners have built, launched or scaled across three decades in radio, podcasting, streaming and digital.
+      </p>
+    </div>
 
-      <div class="sk-marquee-track flex items-center whitespace-nowrap">
-        {loop.map((it, i) => (
-          <div class="flex items-center shrink-0 px-12 group" title={it.name}>
+    <ul class="sk-brand-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-[rgba(212,175,75,0.18)] border border-[rgba(212,175,75,0.18)]">
+      {brands.map((b, i) => (
+        <li class={`sk-brand-cell reveal reveal-delay-${(i % 6) + 1}`}>
+          <div class="group relative flex aspect-[5/3] items-center justify-center overflow-hidden bg-black">
+            <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,75,0.18),transparent_65%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+
+            <div aria-hidden="true" class="absolute inset-0 scale-0 bg-[rgba(212,175,75,0.04)] transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-100"></div>
+
             <img
-              src={it.src}
-              alt={it.name}
+              src={b.logo}
+              alt={b.name}
               loading="lazy"
               decoding="async"
-              class="h-12 md:h-14 w-auto opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-              style="filter: drop-shadow(0 0 12px rgba(212,175,75,0.15)); max-width: 220px; object-fit: contain;"
+              class="relative z-10 max-h-[46%] max-w-[62%] object-contain opacity-55 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-[1.08]"
+              style="filter: drop-shadow(0 0 14px rgba(212,175,75,0.18));"
             />
+
+            <span aria-hidden="true" class="pointer-events-none absolute top-2 left-2 opacity-0 transition-opacity duration-500 group-hover:opacity-80">
+              <Diamond size={8} stroke={1.4} class="text-[color:var(--gold)]" />
+            </span>
+            <span aria-hidden="true" class="pointer-events-none absolute top-2 right-2 opacity-0 transition-opacity duration-500 delay-75 group-hover:opacity-80">
+              <Diamond size={8} stroke={1.4} class="text-[color:var(--gold)]" />
+            </span>
+            <span aria-hidden="true" class="pointer-events-none absolute bottom-2 left-2 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-80">
+              <Diamond size={8} stroke={1.4} class="text-[color:var(--gold)]" />
+            </span>
+            <span aria-hidden="true" class="pointer-events-none absolute bottom-2 right-2 opacity-0 transition-opacity duration-500 delay-150 group-hover:opacity-80">
+              <Diamond size={8} stroke={1.4} class="text-[color:var(--gold)]" />
+            </span>
+
+            <span
+              class="pointer-events-none absolute bottom-3 left-0 right-0 text-center text-[0.55rem] uppercase tracking-[0.28em] text-[color:var(--gold)] opacity-0 translate-y-1 transition-all duration-500 group-hover:opacity-90 group-hover:translate-y-0"
+              style="font-family: var(--font-mono);"
+            >
+              {b.name}
+            </span>
+
+            <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 -top-px h-px bg-linear-to-r from-transparent via-[rgba(212,175,75,0.7)] to-transparent scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
+            <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-linear-to-r from-transparent via-[rgba(212,175,75,0.7)] to-transparent scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
           </div>
-        ))}
-      </div>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-10 flex flex-col items-start justify-between gap-3 text-[0.62rem] uppercase tracking-[0.32em] text-bone-muted md:flex-row md:items-center" style="font-family: var(--font-mono);">
+      <span>{brands.length} channels, brands &amp; platforms</span>
+      <span class="text-[color:var(--gold)]">Howard Stern · SiriusXM · CBS Radio · Westwood One · Viacom · ABC · Cumulus</span>
     </div>
   </div>
 </section>

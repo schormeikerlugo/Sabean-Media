@@ -1,18 +1,29 @@
 ---
+
 ---
 
 <section id="mission" class="relative overflow-hidden bg-ink py-28 md:py-36">
   <div class="mx-auto max-w-[1600px] px-6 md:px-10">
-    <header class="mb-20 grid grid-cols-1 items-start gap-10 md:mb-24 md:grid-cols-12">
+    <header
+      class="mb-20 grid grid-cols-1 items-start gap-10 md:mb-24 md:grid-cols-12"
+    >
       <div class="md:col-span-3 reveal">
-        <div class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">
+        <div
+          class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted"
+        >
           <span class="text-bone">Mission.</span>
           <span class="text-gold-400">(*)</span>
         </div>
       </div>
-      <div class="md:col-span-9 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)] reveal reveal-delay-1">
-        <p class="font-display text-[clamp(1.6rem,3.2vw,2.6rem)] font-light leading-[1.25] text-balance">
-          Our mission is to leverage our significant network and expertise to help high-end talent and brands build their own content, entertainment and media-centric platforms — with a focus on
+      <div
+        class="md:col-span-9 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)] reveal reveal-delay-1"
+      >
+        <p
+          class="font-display text-[clamp(1.6rem,3.2vw,2.6rem)] font-light leading-[1.25] text-balance"
+        >
+          Our mission is to leverage our significant network and expertise to
+          help high-end talent and brands build their own content, entertainment
+          and media-centric platforms — with a focus on
           <span class="text-shine">360° growth</span>,
           <span class="text-shine">multi-vertical revenue</span> and
           <span class="text-shine">audience monetization.</span>
@@ -20,35 +31,80 @@
       </div>
     </header>
 
-    <div class="grid grid-cols-1 gap-0 border-t border-[rgba(212,175,55,0.14)]">
-      {[
-        { n: "01", k: "360° Growth", v: "Cross-platform thinking, end-to-end" },
-        { n: "02", k: "Multi-Vertical Revenue", v: "Stack of revenue lines by design" },
-        { n: "03", k: "Audience Development", v: "Community, retention, monetization" },
-        { n: "04", k: "Visioneering", v: "Strategic brainstorming as a discipline" },
-      ].map((row, i) => (
-        <div class={`group grid grid-cols-12 items-center gap-4 border-b border-[rgba(212,175,55,0.12)] py-6 transition-colors hover:bg-[rgba(212,175,55,0.03)] reveal reveal-delay-${(i % 4) + 1}`}>
-          <span class="col-span-2 text-[0.7rem] uppercase tracking-[0.3em] text-bone-muted md:col-span-1">{row.n}</span>
-          <span class="col-span-10 font-display text-2xl font-light text-bone group-hover:text-gold-gradient md:col-span-5 md:text-3xl">{row.k}</span>
-          <span class="col-span-10 col-start-3 text-[0.82rem] uppercase tracking-[0.18em] text-bone-muted md:col-span-5 md:col-start-auto">{row.v}</span>
-          <span class="col-span-2 col-start-11 flex justify-end text-gold-300 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 md:col-span-1">→</span>
-        </div>
-      ))}
+    <div class="mx-auto max-w-5xl py-[120px] md:py-[150px]">
+      <div
+        class="grid grid-cols-1 gap-0 border-t border-[rgba(212,175,55,0.14)]"
+      >
+        {
+          [
+            {
+              n: "01",
+              k: "360° Growth",
+              v: "Cross-platform thinking, end-to-end",
+            },
+            {
+              n: "02",
+              k: "Multi-Vertical Revenue",
+              v: "Stack of revenue lines by design",
+            },
+            {
+              n: "03",
+              k: "Audience Development",
+              v: "Community, retention, monetization",
+            },
+            {
+              n: "04",
+              k: "Visioneering",
+              v: "Strategic brainstorming as a discipline",
+            },
+          ].map((row, i) => (
+            <div
+              class={`group grid grid-cols-12 items-center gap-4 border-b border-[rgba(212,175,55,0.12)] py-6 transition-colors hover:bg-[rgba(212,175,55,0.03)] reveal reveal-delay-${(i % 4) + 1}`}
+            >
+              <span class="col-span-2 text-[0.7rem] uppercase tracking-[0.3em] text-bone-muted md:col-span-1">
+                {row.n}
+              </span>
+              <span class="col-span-10 font-display text-2xl font-light text-bone group-hover:text-gold-gradient md:col-span-5 md:text-3xl">
+                {row.k}
+              </span>
+              <span class="col-span-10 col-start-3 text-[0.82rem] uppercase tracking-[0.18em] text-bone-muted md:col-span-5 md:col-start-auto">
+                {row.v}
+              </span>
+              <span class="col-span-2 col-start-11 flex justify-end text-gold-300 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 md:col-span-1">
+                →
+              </span>
+            </div>
+          ))
+        }
+      </div>
     </div>
 
     <div class="mt-24 grid grid-cols-1 gap-14 md:grid-cols-12 md:gap-10">
       <div class="md:col-span-3 reveal">
-        <div class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">
+        <div
+          class="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted"
+        >
           <span class="text-bone">Visioneering.</span>
           <span class="text-gold-400">(*)</span>
         </div>
       </div>
-      <blockquote class="md:col-span-9 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)] reveal reveal-delay-1">
-        <p class="font-display text-[clamp(1.8rem,3.6vw,3rem)] italic font-light leading-[1.2] text-bone">
-          <span class="text-gold-gradient">“Vision”</span> meets Walt Disney's <span class="text-gold-gradient">“Imagineering.”</span> It's the magic that happens during brainstorming — where bold ideas, strategy, relationships and resources collide, and the impossible finally feels like…
+      <blockquote
+        class="md:col-span-9 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)] reveal reveal-delay-1"
+      >
+        <p
+          class="font-display text-[clamp(1.8rem,3.6vw,3rem)] italic font-light leading-[1.2] text-bone"
+        >
+          <span class="text-gold-gradient">“Vision”</span> meets Walt Disney's <span
+            class="text-gold-gradient">“Imagineering.”</span
+          > It's the magic that happens during brainstorming — where bold ideas, strategy,
+          relationships and resources collide, and the impossible finally feels like…
           <span class="text-shine">an achievable dream.</span>
         </p>
-        <footer class="mt-8 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted">— The Sabean Group Philosophy</footer>
+        <footer
+          class="mt-8 text-[0.7rem] uppercase tracking-[0.32em] text-bone-muted"
+        >
+          — The Sabean Group Philosophy
+        </footer>
       </blockquote>
     </div>
   </div>

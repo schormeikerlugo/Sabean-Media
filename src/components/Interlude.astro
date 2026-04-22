@@ -1,0 +1,33 @@
+---
+// Full-width video interlude — sits between Moments and DNA sections.
+---
+
+<section class="relative w-full overflow-hidden bg-black">
+  <div class="relative h-[500px] w-full">
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/images/interlude-poster.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/interlude.mp4" type="video/mp4" />
+    </video>
+
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.35)_40%,rgba(0,0,0,0.7)_100%)]"
+    ></div>
+
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,75,0.12)_0%,transparent_70%)]"
+    ></div>
+
+    <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[rgba(212,175,75,0.45)] to-transparent"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[rgba(212,175,75,0.45)] to-transparent"></div>
+  </div>
+</section>
