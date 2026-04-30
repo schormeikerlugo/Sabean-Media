@@ -1,10 +1,10 @@
 ---
 const links = [
-  { n: "01", href: "#mission", label: "Mission" },
-  { n: "02", href: "#services", label: "Services" },
-  { n: "03", href: "#dna", label: "Brands" },
-  { n: "04", href: "#moments", label: "Archive" },
-  { n: "05", href: "#team", label: "Team" },
+  { href: "#mission", label: "Mission" },
+  { href: "#services", label: "Services" },
+  { href: "#dna", label: "Brands" },
+  { href: "#moments", label: "Archive" },
+  { href: "#team", label: "Team" },
 ];
 ---
 
@@ -26,7 +26,7 @@ const links = [
         width="1600"
         height="700"
         decoding="async"
-        class="block h-9 w-auto md:h-11 transition-[transform,filter] duration-500 group-hover:scale-[1.03] drop-shadow-[0_2px_10px_rgba(212,175,75,0.25)]"
+        class="block h-12 w-auto md:h-16 transition-[transform,filter] duration-500 group-hover:scale-[1.03] drop-shadow-[0_2px_10px_rgba(212,175,75,0.25)]"
       />
     </a>
 
@@ -36,9 +36,8 @@ const links = [
           <li>
             <a
               href={l.href}
-              class="group/link relative flex items-baseline gap-2 py-1 text-[0.68rem] uppercase tracking-[0.26em] text-bone-muted transition-colors hover:text-bone"
+              class="group/link relative flex items-baseline py-1 text-[0.72rem] uppercase tracking-[0.26em] text-bone-muted transition-colors hover:text-bone"
             >
-              <span class="text-[0.58rem] text-gold-400/70 transition-colors group-hover/link:text-gold-300">({l.n})</span>
               <span class="relative">
                 {l.label}
                 <span class="absolute -bottom-1 left-0 h-px w-0 bg-gold-300 transition-all duration-500 group-hover/link:w-full"></span>
@@ -91,7 +90,6 @@ const links = [
             class="group flex items-baseline justify-between py-5 text-bone-muted transition-colors hover:text-gold-200"
           >
             <span class="flex items-baseline gap-4">
-              <span class="text-[0.58rem] uppercase tracking-[0.3em] text-gold-400">({l.n})</span>
               <span class="font-display text-2xl font-light text-bone group-hover:text-gold-gradient">{l.label}</span>
             </span>
             <span class="text-gold-300 transition-transform group-hover:translate-x-1">→</span>
