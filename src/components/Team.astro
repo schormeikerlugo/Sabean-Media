@@ -28,8 +28,8 @@ import { team } from "~/data/team";
       class="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10"
       data-team-root
     >
-      <div class="md:col-span-5 relative">
-        <div class="sticky top-24">
+      <div class="md:col-span-4 relative">
+        <div class="sticky top-24 mx-auto w-full max-w-[340px]">
           <div class="relative overflow-hidden rounded-2xl border border-[rgba(212,175,55,0.18)] bg-[#0a0a0a] aspect-[4/5]">
             {team.map((m, i) => (
               <img
@@ -55,7 +55,7 @@ import { team } from "~/data/team";
         </div>
       </div>
 
-      <div class="md:col-span-7 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)]">
+      <div class="md:col-span-8 md:pl-8 md:border-l md:border-[rgba(212,175,55,0.12)]">
         <ul>
           {team.map((m, i) => (
             <li>
@@ -63,7 +63,7 @@ import { team } from "~/data/team";
                 type="button"
                 data-team-btn={m.id}
                 data-active={i === 0 ? "true" : "false"}
-                class="group w-full border-b border-[rgba(212,175,55,0.12)] py-6 text-center transition-colors data-[active=true]:bg-[rgba(212,175,55,0.04)] hover:bg-[rgba(212,175,55,0.025)] md:text-left"
+                class="group w-full rounded-lg border-b border-[rgba(212,175,55,0.12)] px-5 py-6 text-center transition-colors data-[active=true]:bg-[rgba(212,175,55,0.04)] hover:bg-[rgba(212,175,55,0.025)] md:px-7 md:text-left"
               >
                 <div class="grid grid-cols-12 items-center gap-3">
                   <span class="col-span-2 text-[0.68rem] uppercase tracking-[0.32em] text-bone-muted md:col-span-1">
@@ -72,8 +72,10 @@ import { team } from "~/data/team";
                   <span class="col-span-8 font-display text-2xl font-light text-bone transition-colors group-hover:text-gold-gradient group-data-[active=true]:text-gold-gradient md:col-span-8 md:text-3xl">
                     {m.name}
                   </span>
-                  <span class="col-span-2 flex justify-end text-gold-300 transition-transform group-data-[active=true]:rotate-90 md:col-span-3">
-                    <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+                  <span class="col-span-2 flex justify-end self-start md:col-span-3">
+                    <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(212,175,55,0.25)] bg-black/30 text-gold-300 transition-all duration-300 group-hover:border-gold-300/60 group-data-[active=true]:border-gold-300 group-data-[active=true]:bg-[rgba(212,175,55,0.08)] group-data-[active=true]:text-gold-300">
+                      <svg viewBox="0 0 20 20" class="h-3.5 w-3.5 transition-transform duration-300 group-data-[active=true]:rotate-90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+                    </span>
                   </span>
                 </div>
                 <div
